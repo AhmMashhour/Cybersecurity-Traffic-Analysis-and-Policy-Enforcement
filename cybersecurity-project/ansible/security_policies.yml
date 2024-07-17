@@ -1,0 +1,10 @@
+- name: Ensure firewall is enabled
+  hosts: all
+  tasks:
+    - name: Enable UFW
+      command: ufw enable
+
+    - name: Ensure ClamAV is running
+      service:
+        name: clamav-daemon
+        state: started

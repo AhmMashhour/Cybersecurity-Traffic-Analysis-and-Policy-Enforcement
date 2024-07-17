@@ -1,0 +1,3 @@
+This project demonstrates a comprehensive approach to cybersecurity, covering network traffic analysis, digital forensic investigation, and security policy enforcement. 
+By leveraging advanced tools and techniques, the project showcases deep expertise in network monitoring, forensic analysis, and policy implementation. 
+This enhanced and detailed project is a testament to sophisticated cybersecurity skills, making it a valuable addition to any professional portfolio.

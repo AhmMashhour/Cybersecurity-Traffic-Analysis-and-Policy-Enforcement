@@ -1,0 +1,2 @@
+Developed Python scripts to verify compliance with essential security policies. Implemented network-wide security policies using Ansible, 
+ensuring uniform enforcement across all network devices.

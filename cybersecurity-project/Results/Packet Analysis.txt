@@ -1,0 +1,2 @@
+Captured and analyzed 1000 packets of network traffic on the interface eth0 using Wireshark and Scapy.
+The analysis identified several suspicious connections, which were further investigated.

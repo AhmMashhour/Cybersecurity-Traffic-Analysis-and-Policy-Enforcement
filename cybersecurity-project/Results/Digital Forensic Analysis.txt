@@ -1,0 +1,2 @@
+Captured a memory image and analyzed it using Volatility. Extracted crucial information, including running processes, files, and registry hives from the memory image. 
+Analyzed system logs to identify any suspicious activities.
