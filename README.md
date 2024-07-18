@@ -19,7 +19,7 @@ cybersecurity-project/
 └── results/ # Analysis results and findings
 
 
-## Getting Started
+### Getting Started
 
 ### Prerequisites
 
