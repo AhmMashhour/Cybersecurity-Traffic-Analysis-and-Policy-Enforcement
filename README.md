@@ -37,20 +37,23 @@ cybersecurity-project/
    sudo tcpdump -i eth0 -nn -c 1000 -w pcap/capture_all.pcap
    
 2. **Analyze Network Traffic:**
-Open the capture_all.pcap file in Wireshark.
-Apply filters to focus on HTTP and HTTPS traffic
+   Open the "capture_all.pcap" file in Wireshark.
+   Apply filters to focus on HTTP and HTTPS traffic
 
 3. **Run Python Analysis Scripts:**
-Execute the following command to analyze traffic data:
-python3 scripts/analyze_traffic.py
+   Execute the following command to analyze traffic data:
+   ```bash
+   python3 scripts/analyze_traffic.py
 
 4. **Conduct Memory Analysis:**
-Use Volatility to analyze memory images:
-volatility -f mem_dump.raw --profile=WinXPSP2x86 pslist
+   Use Volatility to analyze memory images:
+   ```bash
+   volatility -f mem_dump.raw --profile=WinXPSP2x86 pslist
 
 5. **Enforce Security Policies with Ansible:**
-Run the following command to enforce security policies:
-ansible-playbook ansible/security_policies.yml
+   Run the following command to enforce security policies:
+   ```bash
+   ansible-playbook ansible/security_policies.yml
 
 
 ## Results
