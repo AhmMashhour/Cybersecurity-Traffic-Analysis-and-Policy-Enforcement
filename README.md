@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-This project is a comprehensive cybersecurity initiative focused on capturing and analyzing network traffic. Utilizing advanced tools such as tcpdump, Wireshark, Scapy, and Volatility, this project aims to monitor network activities, conduct digital forensic analysis, and develop robust security policies through Python and Ansible.
+This project is a Cybersecurity Traffic Analysis and Policy Enforcement focused on capturing and analyzing network traffic. Utilizing advanced tools such as tcpdump, Wireshark, Scapy, and Volatility, this project aims to monitor network activities, conduct digital forensic analysis, and develop robust security policies through Python and Ansible.
+
 
 ## Directory Structure
 
@@ -19,15 +20,15 @@ cybersecurity-project/
 └── results/ # Analysis results and findings
 
 
-### Getting Started
+## Technologies Used
 
-### Prerequisites
+- **tcpdump**: For capturing network traffic.
+- **Wireshark**: For analyzing captured packet data.
+- **Scapy**: A Python library used for packet manipulation and analysis.
+- **Volatility**: A tool for memory forensics.
+- **Python**: For scripting and automation tasks.
+- **Ansible**: For configuration management and enforcing security policies.
 
-- Python 3.x
-- Ansible
-- Wireshark
-- Volatility
-- tcpdump
 
 ### Setup Instructions
 
