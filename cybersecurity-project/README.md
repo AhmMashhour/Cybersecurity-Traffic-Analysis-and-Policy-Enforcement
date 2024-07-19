@@ -1,26 +1,24 @@
-# Cybersecurity-Traffic-Analysis-and-Policy-Enforcement
+# Cybersecurity Traffic Analysis and Policy Enforcement
 
-## Overview
+## Project Overview
 
-This project involves capturing and analyzing network traffic, conducting digital forensic analysis, and developing and enforcing security policies. It demonstrates practical applications of various cybersecurity tools and techniques.
+This project is a Cybersecurity Traffic Analysis and Policy Enforcement focused on capturing and analyzing network traffic. Utilizing advanced tools such as tcpdump, Wireshark, Scapy, and Volatility, this project aims to monitor network activities, conduct digital forensic analysis, and develop robust security policies through Python and Ansible.
 
-## Table of Contents
 
-1. [Project Description](#project-description)
-2. [Technologies Used](#technologies-used)
-3. [Directory Structure](#directory-structure)
-4. [Setup Instructions](#setup-instructions)
-5. [Usage](#usage)
-6. [Results](#results)
-7. [Contributing](#contributing)
-8. [License](#license)
+## Directory Structure
 
-## Project Description
+cybersecurity-project/
 
-This project encompasses:
-- **Network Traffic Analysis**: Capturing and examining data packets to identify suspicious activities.
-- **Digital Forensic Analysis**: Analyzing memory dumps and system logs to uncover potential security incidents.
-- **Security Policy Enforcement**: Developing scripts and using Ansible to implement security policies across systems.
+├── scripts/ # Python scripts for traffic and system analysis
+
+├── pcap/ # Directory for captured network traffic files
+
+├── logs/ # Directory for system log files
+
+├── ansible/ # Ansible playbook for security policy enforcement
+
+└── results/ # Analysis results and findings
+
 
 ## Technologies Used
 
@@ -32,4 +30,42 @@ This project encompasses:
 - **Ansible**: For configuration management and enforcing security policies.
 
 
+### Setup Instructions
 
+1. **Capture Network Traffic:**
+   Execute the following command to capture network traffic:
+   ```bash
+   sudo tcpdump -i eth0 -nn -c 1000 -w pcap/capture_all.pcap
+   
+2. **Analyze Network Traffic:**
+   Open the "capture_all.pcap" file in Wireshark.
+   Apply filters to focus on HTTP and HTTPS traffic
+
+3. **Run Python Analysis Scripts:**
+   Execute the following command to analyze traffic data:
+   ```bash
+   python3 scripts/analyze_traffic.py
+
+4. **Conduct Memory Analysis:**
+   Use Volatility to analyze memory images:
+   ```bash
+   volatility -f mem_dump.raw --profile=WinXPSP2x86 pslist
+
+5. **Enforce Security Policies with Ansible:**
+   Run the following command to enforce security policies:
+   ```bash
+   ansible-playbook ansible/security_policies.yml
+
+
+## Results
+- Packet Analysis: Successfully captured and analyzed network traffic, identifying suspicious connections for further investigation.
+- Digital Forensic Analysis: Conducted thorough memory and log analysis to uncover potential security incidents.
+- Security Policies: Developed compliance verification scripts and implemented network-wide policies using Ansible.
+
+
+## Conclusion
+This project showcases a holistic approach to cybersecurity, demonstrating expertise in network monitoring, forensic analysis, and security policy implementation. It serves as a valuable asset for any cybersecurity professional's portfolio.
+
+
+## Acknowledgments
+Special thanks to the open-source community for the tools and resources utilized in this project.
