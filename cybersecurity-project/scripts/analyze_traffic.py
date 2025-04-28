@@ -1,48 +1,35 @@
-import scapy.all as scapy
 import os
 
-def read_pcap(file_path):
-    packets = scapy.rdpcap(file_path)
-    return packets
+def analyze_logs(log_file_path):
+    suspicious_keywords = ["error", "unauthorized", "failed", "denied"]
+    findings = []
 
-def analyze_packets(packets):
-    http_traffic = 0
-    https_traffic = 0
-    suspicious_ips = set()
+    with open(log_file_path, 'r', errors='ignore') as f:
+        lines = f.readlines()
+        for line in lines:
+            if any(keyword in line.lower() for keyword in suspicious_keywords):
+                findings.append(line.strip())
 
-    for pkt in packets:
-        if pkt.haslayer(scapy.IP):
-            ip_layer = pkt[scapy.IP]
-            if ip_layer.dport == 80:
-                http_traffic += 1
-            elif ip_layer.dport == 443:
-                https_traffic += 1
-            if ip_layer.dst not in ['8.8.8.8', '1.1.1.1']:  # suspicious if not to common DNS
-                suspicious_ips.add(ip_layer.dst)
+    return findings
 
-    return http_traffic, https_traffic, suspicious_ips
-
-def save_results(http, https, suspects, output_file):
-    with open(output_file, 'w') as f:
-        f.write(f"HTTP Requests: {http}\n")
-        f.write(f"HTTPS Requests: {https}\n")
-        f.write("Suspicious IPs:\n")
-        for ip in suspects:
-            f.write(f"{ip}\n")
+def save_findings(findings, output_file):
+    with open(output_file, 'a') as f:
+        f.write("\n\n--- Log Analysis Findings ---\n")
+        for item in findings:
+            f.write(f"{item}\n")
 
 def main():
-    pcap_file = "pcap/capture_all.pcap"
+    log_file = "logs/system_logs.log"
     result_file = "results/analysis_report.txt"
 
-    if not os.path.exists(pcap_file):
-        print(f"PCAP file '{pcap_file}' not found.")
+    if not os.path.exists(log_file):
+        print(f"Error: '{log_file}' does not exist. Please place your log file first.")
         return
 
-    packets = read_pcap(pcap_file)
-    http, https, suspects = analyze_packets(packets)
-    save_results(http, https, suspects, result_file)
+    findings = analyze_logs(log_file)
+    save_findings(findings, result_file)
 
-    print(f"Analysis complete. Results saved to {result_file}.")
+    print(f"✅ Log analysis completed. Findings appended to {result_file}")
 
 if __name__ == "__main__":
     main()
