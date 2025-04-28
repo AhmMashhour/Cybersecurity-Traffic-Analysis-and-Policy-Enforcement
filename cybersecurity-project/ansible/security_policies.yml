@@ -1,10 +1,33 @@
-- name: Ensure firewall is enabled
+---
+- name: Enforce Basic Security Policies
   hosts: all
-  tasks:
-    - name: Enable UFW
-      command: ufw enable
+  become: yes
 
-    - name: Ensure ClamAV is running
+  tasks:
+    - name: Ensure UFW (firewall) is installed
+      apt:
+        name: ufw
+        state: present
+      when: ansible_facts['os_family'] == "Debian"
+
+    - name: Ensure UFW firewall is enabled
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: Allow SSH connections through the firewall
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+    - name: Disable root login over SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin no'
+        backup: yes
+
+    - name: Restart SSH service
       service:
-        name: clamav-daemon
-        state: started
+        name: ssh
+        state: restarted
