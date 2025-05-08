@@ -1,4 +1,4 @@
----
+
 - name: Enforce Basic Security Policies
   hosts: all
   become: yes
