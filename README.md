@@ -68,4 +68,4 @@ This project showcases a holistic approach to cybersecurity, demonstrating exper
 
 
 ## Acknowledgments
-Special thanks to the open-source community for the tools and resources utilized in this project.
+Special thanks to the open-source community for the tools and resources utilized in this project
