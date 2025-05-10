@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a Cybersecurity Traffic Analysis and Policy Enforcement focused on capturing and analyzing network traffic. Utilizing advanced tools such as tcpdump, Wireshark, Scapy, and Volatility, this project aims to monitor network activities, conduct digital forensic analysis, and develop robust security policies through Python and Ansible.
+This project is a Cybersecurity Traffic Analysis and Policy Enforcement focused on capturing and analyzing network traffic. Utilizing advanced tools such as tcpdump, Wireshark, Scapy, and Volatility, this project aims to monitor network activities, conduct digital forensic analysis, and develop robust security policies through Python and Ansible
 
 
 ## Directory Structure
