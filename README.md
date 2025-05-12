@@ -60,7 +60,7 @@ cybersecurity-project/
 ## Results
 - Packet Analysis: Successfully captured and analyzed network traffic, identifying suspicious connections for further investigation.
 - Digital Forensic Analysis: Conducted thorough memory and log analysis to uncover potential security incidents.
-- Security Policies: Developed compliance verification scripts and implemented network-wide policies using Ansible.
+- Security Policies: Developed compliance verification scripts and implemented network-wide policies using Ansible
 
 
 ## Conclusion
